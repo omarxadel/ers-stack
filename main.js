@@ -28,6 +28,7 @@ function createMainWindow() {
         icon: `${__dirname}/assets/icon.png`,
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
         },
     })
 
@@ -36,7 +37,7 @@ function createMainWindow() {
     if (isDev && process.argv.indexOf('--noDevServer') === -1) {
         indexPath = url.format({
             protocol: 'http:',
-            host: 'localhost:8081',
+            host: 'localhost:8080',
             pathname: 'index.html',
             slashes: true,
         })
